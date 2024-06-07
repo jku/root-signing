@@ -21,8 +21,9 @@ permissions: read-all
 on:
   # Enable cron for re-signing timestamp every week. Timestamp is also
   # regenerated in stable-snapshot-timestamp.yml
-  schedule:
-    - cron: '0 16 * * 5' # every Friday at 9am PST
+  ## Schedule disabled at migration: this workflow is not needed with tuf-on-ci
+  #schedule:
+  #  - cron: '0 16 * * 5' # every Friday at 9am PST
   workflow_dispatch:
     inputs:
       dry_run:

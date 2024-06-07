@@ -20,8 +20,10 @@ permissions: read-all
 on:
   # Enable cron for checking if a snapshot/timestamp PR needs review
   # every 2 hours and attempts to merge.
-  schedule:
-    - cron: '30 */2 * * *' # every 2 hours
+
+  ## Schedule disabled at migration: this is not needed with tuf-on-ci
+  #schedule:
+  #  - cron: '30 */2 * * *' # every 2 hours
   workflow_dispatch:
 
 jobs:

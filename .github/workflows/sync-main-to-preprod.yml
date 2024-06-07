@@ -22,13 +22,14 @@ name: Sync Published Root Signing to Preprod
 permissions: {}
 
 on:
-  workflow_dispatch:
-  push:
-    # When a root signing ceremony completes
-    branches:
-      - main
-    paths:
-      - 'repository/repository/root.json'
+  #workflow_dispatch:
+  ## push trigger disabled at migration: this workflow is not needed with tuf-on-ci
+  #push:
+  #  # When a root signing ceremony completes
+  #  branches:
+  #    - main
+  #  paths:
+  #    - 'repository/repository/root.json'
 
 jobs:
   sync:
