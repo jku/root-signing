@@ -21,14 +21,17 @@ permissions: read-all
 # when new published metadata is submitted.
 on:
   # Enable cron for re-signing snapshot and timestamp every week
-  schedule:
-    - cron: '0 16 * * 2' # every Tuesday at 9am PST
+  ## Schedule disabled at migration: this workflow is not needed with tuf-on-ci
+  #schedule:
+  #  - cron: '0 16 * * 2' # every Tuesday at 9am PST
+
   # When a new root is staged
-  push:
-    branches:
-      - main
-    paths:
-      - 'repository/staged/root.json'
+  ## push trigger disabled at migration: this workflow is not needed with tuf-on-ci
+  #push:
+  #  branches:
+  #    - main
+  #  paths:
+  #    - 'repository/staged/root.json'
   workflow_dispatch:
     inputs:
       dry_run:

@@ -24,17 +24,18 @@
 name: Sync Repository Main Branch with both GCS Preprod and Prod Buckets
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      # When timestamp or snapshot files are changed.
-      # Note: the sync job below uses a diff to ensure ONLY these files are changed
-      # prior to syncing.
-      - 'repository/repository/timestamp.json'
-      - 'repository/repository/snapshot.json'
-      - 'repository/repository/[0-9]+.snapshot.json'
-  workflow_dispatch:
+  ## push trigger disabled at migration: this workflow is not needed with tuf-on-ci
+  #push:
+  #  branches:
+  #    - main
+  #  paths:
+  #    # When timestamp or snapshot files are changed.
+  #    # Note: the sync job below uses a diff to ensure ONLY these files are changed
+  #    # prior to syncing.
+  #    - 'repository/repository/timestamp.json'
+  #    - 'repository/repository/snapshot.json'
+  #    - 'repository/repository/[0-9]+.snapshot.json'
+  #workflow_dispatch:
 
 jobs:
   sync:

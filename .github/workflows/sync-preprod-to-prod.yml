@@ -16,7 +16,7 @@
 name: Sync Preprod Repository with GCS Prod Bucket
 
 on:
-  workflow_dispatch:
+  #workflow_dispatch:
 
 jobs:
   sync:
